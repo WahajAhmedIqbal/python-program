@@ -55,24 +55,23 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
   if len(s) > 1:
-    frst = s[:1]
-    secnd = s[1:]
-    return "".join(frst + third)
-  else:
-    pass
-  return 
+    frst = s[0]
+    b = s.replace(frst,"*")
+    return "".join(frst + b[1:]) 
 
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
 # by a space '<a> <b>', except swap the first 2 chars of each string.
 # e.g.
-#   'mix', pod' -> 'pox mid'
+#   'mix', pod,' -> 'pox mid'
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-  # +++your code here+++
-  return
+  # if len(a) <= 2 and len(b) <= 2 :
+    strt = b[:2] + a[2:]
+    second = a[:2] + b[2:]
+    return strt + " " + second
 
 
 # Provided simple test() function used in main() to print
